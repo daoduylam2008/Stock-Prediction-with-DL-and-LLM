@@ -64,8 +64,7 @@ def normalize(data: pd.DataFrame):
 
 def create_sequences(scaled: np.ndarray, steps: int, close_col_idx: int = 0):
     """
-    Convert time series → supervised learning pairs.
-      ...
+    Convert time series → supervised learning pairs.    
     """
     X, y = [], []
     for i in range(steps, len(scaled)):
