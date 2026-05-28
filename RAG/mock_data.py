@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import random
 
 
@@ -6,7 +6,7 @@ def _price_series(base, days=60, seed=42):
     random.seed(seed)
     records = []
     price = base
-    today = datetime.now(datetime.timezone.utc)
+    today = datetime.now(timezone.utc)
     
     for i in range(days, 0, -1):
         dt = (today - timedelta(days=i)).strftime("%Y-%m-%d")
